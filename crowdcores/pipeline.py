@@ -26,9 +26,3 @@ class CrowdCoresPipeline:
             return data["pipeline_response_result"]
         if data["success"] == 0:
             raise getattr(__builtins__, data["exception_name"])(data["exception_message"])
-
-
-generator=crowdcores_pipeline('text-generation', model='gpt2');
-r=generator("how are you doing ", max_length=30, num_return_sequences=4)
-print(r)
-
